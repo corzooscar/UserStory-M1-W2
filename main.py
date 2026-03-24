@@ -42,7 +42,15 @@ while 777:
                     Process = input(f"{YELLOW}{ITALIC}Type 'exit' to return to the main menu, or press Enter to\nadd another product: {RESET}").lower()
 
         elif Option == 2:
-            print("NOT IMPLEMENTED YET")
+            print(f"{BOLD}{MAGENTA}{"="*21}{RESET}{BOLD}{GREEN} SHOW INVENTORY{RESET} {BOLD}{MAGENTA}{"="*23}{RESET}")
+            if not Inventory:
+                print(f"{YELLOW}The inventory is currently empty.{RESET}\n")
+            
+            for product in Inventory:
+                print(f"""{GREEN}— Product:  {product["Product"]}
+Unit price: ${product["Price"]:.2f}
+Quantity:   {product["Quantity"]}
+{"─"*31}{RESET}""")
         elif Option == 3:
             print("NOT IMPLEMENTED YET")
         elif Option == 4:
