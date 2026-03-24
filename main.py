@@ -51,11 +51,22 @@ while 777:
 Unit price: ${product["Price"]:.2f}
 Quantity:   {product["Quantity"]}
 {"─"*31}{RESET}""")
+                
         elif Option == 3:
-            print("NOT IMPLEMENTED YET")
+            print(f"{BOLD}{MAGENTA}{"="*19}{RESET}{BOLD}{GREEN} STATISTICS{RESET} {BOLD}{MAGENTA}{"="*21}{RESET}")
+            if not Inventory:
+                print(f"{YELLOW}The inventory is currently empty. No statistics to show.{RESET}\n")
+            else:
+                total_value = sum(product["Price"] * product["Quantity"] for product in Inventory)
+                total_items = sum(product["Quantity"] for product in Inventory)
+                average_price = total_value / total_items if total_items > 0 else 0
+                print(f"{GREEN}Total inventory value: ${total_value:.2f}{RESET}")
+                print(f"{GREEN}Total number of items: {total_items}{RESET}")
+        
         elif Option == 4:
-            print("Exiting the program. Goodbye!")
+            print(f"{GREEN}{"Exiting the program. Goodbye!".center(60)}{RESET}")
             exit()
+        
         else:
             print(f"{BOLD}{RED}{"❌ ERROR: Please enter a number between 1 and 4. ❌".center(60)}{RESET}")
     except ValueError:
