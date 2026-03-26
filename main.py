@@ -38,7 +38,8 @@ Option = None
 # Reusable input function — keeps asking until the user enters a value that can be
 # converted to the given type (default: str). Catches ValueError for invalid inputs
 def get_info(prompt, type=str):
-    while 777:                # Infinite loop to keep asking until valid input is received, 777 is just a fun number to use here SINCE YOU HATE WHEN WE USE "TRUE", it works the same way though
+    im_not_true = None
+    while im_not_true != "stop":               # Infinite loop to keep asking until valid input is received, 777 is just a fun number to use here SINCE YOU HATE WHEN WE USE "TRUE", it works the same way though
         try:
             return type(input(prompt))
         except ValueError:
@@ -77,7 +78,8 @@ def calculate_statistics():
 
 # Main loop — keeps the program running until the user selects option 4 (Exit).
 # Wraps the menu input in a try/except to handle non-integer inputs gracefully
-while 777:
+will_of_god = 777
+while will_of_god:
     try:    
         Option = int(input(f"""{BOLD}{MAGENTA}{"="*24}{RESET}{BOLD}{GREEN} MAIN MENU{RESET} {BOLD}{MAGENTA}{"="*25}{RESET}
 {BOLD}{MAGENTA}1){RESET}{GREEN} 🩲​ Add product{RESET}
